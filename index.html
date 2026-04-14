@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Explorador - GitHub Copilot Developer Pack</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cyber-blue: #00A3FF;
+            --radiant-purple: #BF00FF;
+            --electric-red: #FF0066;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #050510;
+            background-image: 
+                radial-gradient(circle at 15% 50%, rgba(0, 163, 255, 0.15), transparent 25%),
+                radial-gradient(circle at 85% 30%, rgba(191, 0, 255, 0.15), transparent 25%);
+            background-attachment: fixed;
+            color: #FFFFFF;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, .title-font {
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        /* Glassmorphism Classes */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        .glass-card {
+            background: linear-gradient(145deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.01) 100%);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .glass-card:hover {
+            border-color: var(--cyber-blue);
+            box-shadow: 0 0 15px rgba(0, 163, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        /* Highlight Elements */
+        .highlight-border {
+            position: relative;
+        }
+        
+        .highlight-border::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            padding: 2px;
+            background: linear-gradient(45deg, var(--electric-red), var(--radiant-purple));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+
+        .text-glow-blue {
+            text-shadow: 0 0 10px rgba(0, 163, 255, 0.7);
+        }
+
+        .text-glow-red {
+            text-shadow: 0 0 15px rgba(255, 0, 102, 0.8);
+        }
+
+        .bg-gradient-cyber {
+            background: linear-gradient(135deg, var(--cyber-blue), var(--radiant-purple));
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0a1a; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--cyber-blue); 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--radiant-purple); 
+        }
+    </style>
+</head>
+<body class="min-h-screen p-4 md:p-8 flex flex-col items-center">
+
+    <!-- ENCABEZADO -->
+    <header class="w-full max-w-7xl flex flex-col items-center text-center mb-12 relative z-10 pt-8">
+        <h1 class="text-4xl md:text-6xl font-black mb-4 text-transparent bg-clip-text bg-gradient-to-r from-[#00A3FF] to-[#FFFFFF] text-glow-blue uppercase tracking-wider">
+            Dashboard Explorador:<br>Combo GitHub Copilot Developer Pack
+        </h1>
+        <p class="text-xl md:text-2xl text-gray-300 font-light mb-8 max-w-3xl">
+            "Desbloquea tu potencial de desarrollo y codifica 110 veces más rápido."
+        </p>
+        <button class="bg-gradient-cyber hover:opacity-90 text-white font-bold py-4 px-10 rounded-full text-lg tracking-wider transition-all duration-300 shadow-[0_0_20px_rgba(191,0,255,0.6)] hover:shadow-[0_0_30px_rgba(0,163,255,0.8)] transform hover:scale-105">
+            COMENZAR A EXPLORAR AHORA
+        </button>
+    </header>
+
+    <!-- OFERTA PRINCIPAL -->
+    <section class="w-full max-w-4xl mb-12 relative z-10">
+        <div class="glass-panel highlight-border rounded-2xl p-8 flex flex-col md:flex-row items-center justify-between text-center md:text-left gap-6">
+            <div>
+                <h2 class="text-3xl md:text-4xl font-bold text-[#FF0066] text-glow-red mb-2 title-font">INCLUYE GITHUB COPILOT STUDENT</h2>
+                <p class="text-gray-400 text-lg">Acceso ininterrumpido al asistente de IA más avanzado del mundo.</p>
+            </div>
+            <div class="flex flex-col items-center justify-center bg-black/40 rounded-xl p-6 border border-[#FF0066]/30">
+                <span class="text-5xl font-black text-white">$20 <span class="text-xl text-gray-400">USD</span></span>
+                <span class="text-[#00A3FF] font-bold tracking-widest mt-1">DURACIÓN: 2 AÑOS</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- PUNTOS DE VALOR CLAVE (4 Tarjetas) -->
+    <section class="w-full max-w-7xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16 relative z-10">
+        
+        <div class="glass-card rounded-xl p-6 flex flex-col items-center text-center gap-4">
+            <div class="p-4 rounded-full bg-[#00A3FF]/20 border border-[#00A3FF]/50 shadow-[0_0_15px_rgba(0,163,255,0.4)]">
+                <i data-lucide="rocket" class="w-10 h-10 text-[#00A3FF]"></i>
+            </div>
+            <h3 class="title-font text-lg font-bold text-white">¡CODIFICA 110X MÁS RÁPIDO!</h3>
+        </div>
+
+        <div class="glass-card rounded-xl p-6 flex flex-col items-center text-center gap-4">
+            <div class="p-4 rounded-full bg-[#BF00FF]/20 border border-[#BF00FF]/50 shadow-[0_0_15px_rgba(191,0,255,0.4)]">
+                <i data-lucide="graduation-cap" class="w-10 h-10 text-[#BF00FF]"></i>
+            </div>
+            <h3 class="title-font text-lg font-bold text-white">ACCESO GRATIS A COPILOT STUDENT</h3>
+        </div>
+
+        <div class="glass-card rounded-xl p-6 flex flex-col items-center text-center gap-4">
+            <div class="p-4 rounded-full bg-[#FF0066]/20 border border-[#FF0066]/50 shadow-[0_0_15px_rgba(255,0,102,0.4)]">
+                <i data-lucide="message-square-code" class="w-10 h-10 text-[#FF0066]"></i>
+            </div>
+            <h3 class="title-font text-lg font-bold text-white">DESBLOQUEA FUNCIONES PREMIUM DEL CHAT DE IA EN VS CODE</h3>
+        </div>
+
+        <div class="glass-card rounded-xl p-6 flex flex-col items-center text-center gap-4">
+            <div class="p-4 rounded-full bg-white/10 border border-white/30 shadow-[0_0_15px_rgba(255,255,255,0.2)]">
+                <i data-lucide="brain" class="w-10 h-10 text-white"></i>
+            </div>
+            <h3 class="title-font text-lg font-bold text-white">UTILIZA LOS ÚLTIMOS MODELOS DE IA MÁS POPULARES</h3>
+        </div>
+
+    </section>
+
+    <!-- CUADRÍCULA DE BENEFICIOS SECUNDARIOS -->
+    <section class="w-full max-w-[1400px] mb-20 relative z-10">
+        <div class="flex items-center gap-4 mb-8">
+            <div class="h-[1px] flex-grow bg-gradient-to-r from-transparent to-[#00A3FF]/50"></div>
+            <h2 class="text-2xl title-font font-bold text-[#00A3FF] tracking-wider uppercase">Arsenal de Herramientas Desbloqueadas</h2>
+            <div class="h-[1px] flex-grow bg-gradient-to-l from-transparent to-[#00A3FF]/50"></div>
+        </div>
+
+        <div id="benefits-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+            <!-- Las tarjetas se inyectarán aquí mediante JavaScript -->
+        </div>
+    </section>
+
+    <script>
+        // Inicializar iconos
+        lucide.createIcons();
+
+        // Datos de los 84 beneficios extraídos de la solicitud
+        const benefits = [
+            { name: "Namecheap", desc: "1 año de registro de dominio .me y 1 certificado SSL gratis por 1 año." },
+            { name: "DigitalOcean", desc: "$200 de crédito en la plataforma por 1 año." },
+            { name: "Name.com", desc: "Dominio gratuito en extensiones seleccionadas (.live, .studio, .software, etc.)." },
+            { name: "GitHub Copilot", desc: "Acceso gratuito a Copilot Student." },
+            { name: "Microsoft Azure", desc: "Acceso gratuito a más de 25 servicios en la nube más $100 en crédito." },
+            { name: "Notion", desc: "Plan Notion Education con funciones IA adicionales y mayor historial." },
+            { name: ".TECH", desc: "Un dominio .TECH estándar gratis por 1 año." },
+            { name: "GitHub", desc: "GitHub Pro gratuito." },
+            { name: "JetBrains", desc: "Suscripción anual gratuita a IDEs de escritorio profesionales." },
+            { name: "Codedex", desc: "6 meses de membresía premium gratuita en Codédex Club." },
+            { name: "Visual Studio Code", desc: "Paquetes de codificación para Java, Python o .NET." },
+            { name: "Heroku", desc: "Crédito de $13 USD al mes durante 24 meses." },
+            { name: "DataCamp", desc: "Tres meses de acceso gratuito." },
+            { name: "Educative", desc: "6 meses de acceso gratuito a más de 70 cursos y 30% de descuento." },
+            { name: "MongoDB", desc: "$50 en créditos de Atlas y certificación gratuita." },
+            { name: "Testmail", desc: "Plan Essential gratuito." },
+            { name: "Termius", desc: "Acceso gratuito a todas las funciones Pro y Team." },
+            { name: "GitHub Codespaces", desc: "Acceso nivel Pro gratuito." },
+            { name: "Microsoft Azure (13-17)", desc: "Acceso gratuito a servicios seleccionados (App Services, MySQL, etc.)." },
+            { name: "FrontendMasters", desc: "6 meses de acceso gratuito a cursos y talleres." },
+            { name: "Datadog", desc: "Cuenta Pro con 10 servidores gratis por 2 años." },
+            { name: "Camber", desc: "Plan Camber Student gratis (200 horas CPU, 75GB almacenamiento, 200 mensajes LLM)." },
+            { name: "Stripe", desc: "Exención de tarifas de transacción en los primeros $1000 procesados." },
+            { name: "GitHub Pages", desc: "Un sitio por cuenta y sitios de proyectos ilimitados." },
+            { name: "Notion Templates", desc: "Colección de plantillas para aulas, hackatones y portafolios." },
+            { name: "Appwrite", desc: "Acceso gratuito al plan Education (límites de recursos Pro)." },
+            { name: "VS Dev Essentials", desc: "Acceso a VS Community, Pluralsight y $200 de crédito Azure el 1er mes." },
+            { name: "1Password", desc: "1Password gratis por un año, incluyendo herramientas para desarrolladores." },
+            { name: "IconScout", desc: "Acceso a 60 iconos premium mensuales gratis por 1 año." },
+            { name: "Bootstrap Studio", desc: "Licencia gratuita." },
+            { name: "GitLens / GitKraken", desc: "Plan GitKraken Student gratis por 6 meses y luego 80% de descuento." },
+            { name: "Github Campus Experts", desc: "Acceso a postulación al programa de capacitación." },
+            { name: "PomoDone", desc: "Plan Lite gratuito por 2 años." },
+            { name: "Scrimba", desc: "1 mes de acceso gratuito a cursos Pro." },
+            { name: "Visme", desc: "3 meses de acceso gratuito al plan Starter." },
+            { name: "LocalStack", desc: "Licencia gratuita para el emulador de AWS." },
+            { name: "BrowserStack", desc: "Plan Automate Mobile gratuito por 1 año." },
+            { name: "Icons8", desc: "Suscripción gratuita de 3 meses." },
+            { name: "Sentry", desc: "50K errores, 100K transacciones y funciones de equipo gratis (1 año)." },
+            { name: "New Relic", desc: "Acceso gratuito (valor de $300/mes)." },
+            { name: "Polypane", desc: "Uso gratuito del plan individual por 1 año." },
+            { name: "Blackfire", desc: "Suscripción Developer gratuita." },
+            { name: "Zyte", desc: "1 unidad de Scrapy Cloud gratuita para siempre." },
+            { name: "Octicons", desc: "Acceso al diseño de iconos en Figma." },
+            { name: "Deepnote", desc: "Uso gratuito del plan Team." },
+            { name: "InterviewCake", desc: "Acceso al curso de preparación para entrevistas por 1 semana." },
+            { name: "LambdaTest", desc: "Plan Live gratuito por un año." },
+            { name: "Arduino", desc: "Arduino Cloud gratuito por 6 meses." },
+            { name: "Pageclip", desc: "Plan básico gratuito." },
+            { name: "AlgoExpert", desc: "20 preguntas de entrevista gratis y 10% de descuento." },
+            { name: "HazeOver", desc: "Licencia de aplicación gratuita para Mac." },
+            { name: "CodeScene", desc: "Cuenta Student gratuita para repositorios privados." },
+            { name: "Travis CI", desc: "Builds privados gratuitos." },
+            { name: "ToDiagram", desc: "Plan Pro gratuito." },
+            { name: "SlideCoach", desc: "2,000 créditos gratis (40 sesiones) por un año." },
+            { name: "Imgbot", desc: "Optimización de imágenes gratuita." },
+            { name: "Requestly", desc: "Plan Professional gratuito por un año." },
+            { name: "GitHub Exchange", desc: "Acceso a la comunidad de estudiantes para proyectos." },
+            { name: "Adafruit", desc: "1 año de Adafruit IO+ gratis." },
+            { name: "SQLGate", desc: "Acceso a funciones estándar por 1 año." },
+            { name: "Doppler", desc: "Suscripción Team gratuita." },
+            { name: "GitHub Desktop", desc: "Acceso gratuito Open Source." },
+            { name: "Tower", desc: "Licencia Pro gratuita." },
+            { name: "DailyBot", desc: "Plan Business gratis para 10 usuarios por 6 meses." },
+            { name: "PopSQL", desc: "Suscripción Premium gratuita." },
+            { name: "WorkingCopy", desc: "Funciones Pro gratuitas." },
+            { name: "Xojo", desc: "Licencia Pro gratuita." },
+            { name: "AstraSecurity", desc: "Acceso de 6 meses a firewall y escáner." },
+            { name: "GoRails", desc: "Acceso gratuito a videos por 12 meses." },
+            { name: "POEditor", desc: "Plan Plus gratis por un año." },
+            { name: "Blockchair", desc: "100,000 peticiones API gratuitas." },
+            { name: "CARTO", desc: "Mejoras de cuenta por 2 años." },
+            { name: "DeepScan", desc: "Prueba gratuita de 6 meses." },
+            { name: "Honeybadger", desc: "Cuenta Small gratis por 1 año." },
+            { name: "DevCycle", desc: "1 año gratis en plan Starter." },
+            { name: "Codecov", desc: "Acceso gratuito para repositorios privados." },
+            { name: "Dashlane", desc: "Dashlane Premium gratis por 6 meses." },
+            { name: "SimpleAnalytics", desc: "Plan Starter gratis por un año." },
+            { name: "Vaadin", desc: "Licencia de suscripción Pro gratuita." },
+            { name: "Themeisle", desc: "1 año gratuito del tema Neve Agency." },
+            { name: "Appfigures", desc: "Acceso gratuito a reportes analíticos por un año." },
+            { name: "ConfigCat", desc: "1000 feature flags gratuitos." },
+            { name: "SymfonyCasts", desc: "Suscripción gratuita de 3 meses." },
+            { name: "GitHub Certification", desc: "1 cupón de certificación gratuito (Foundations o Copilot)." }
+        ];
+
+        const grid = document.getElementById('benefits-grid');
+
+        benefits.forEach(item => {
+            const card = document.createElement('div');
+            card.className = 'glass-card rounded-lg p-4 flex flex-col justify-start border-l-2 border-l-[#BF00FF] hover:border-l-[#00A3FF]';
+            
+            card.innerHTML = `
+                <div class="flex items-center gap-2 mb-2">
+                    <div class="w-1.5 h-1.5 rounded-full bg-[#00A3FF] shadow-[0_0_5px_#00A3FF]"></div>
+                    <h4 class="font-bold text-white text-sm tracking-wide">${item.name}</h4>
+                </div>
+                <p class="text-xs text-gray-400 leading-relaxed">${item.desc}</p>
+            `;
+            
+            grid.appendChild(card);
+        });
+    </script>
+</body>
+</html>
